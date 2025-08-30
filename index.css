@@ -150,7 +150,7 @@ section {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     width: 280px;
-    border: 1px solid rgba(var(--primary-color), 0.1);
+    border: 1px solid rgba(var(--secondary-color), 0.1);
 }
 
 .skill-category:hover {
@@ -375,6 +375,14 @@ section {
         width: 100%;
         max-width: 300px;
         padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(var(--secondary-color), 0.1);
+    }
+
+    .skill-category:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
     }
 
     .skill-category h4 {
