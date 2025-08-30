@@ -1,18 +1,18 @@
 /* General Styles */
 :root {
-    --primary-color: #007bff;
-    --secondary-color: #6c757d;
-    --background-dark: #2c3e50;
-    --text-light: #ecf0f1;
-    --card-bg: #34495e;
+    --primary-color: #6a0572; /* A pleasant purple */
+    --secondary-color: #8e2b8e; /* A slightly darker purple */
+    --background-light: #f4f4f9; /* Off-white background */
+    --text-dark: #333333; /* Dark text for readability */
+    --card-bg: #ffffff; /* White card background */
     --font-family: 'Roboto', sans-serif;
 }
 
 body {
     margin: 0;
     font-family: var(--font-family);
-    background-color: var(--background-dark);
-    color: var(--text-light);
+    background-color: var(--background-light);
+    color: var(--text-dark);
     line-height: 1.6;
 }
 
@@ -25,6 +25,7 @@ body {
 h1, h2, h3, h4 {
     margin-top: 0;
     font-weight: 700;
+    color: var(--secondary-color); /* Headings in secondary color */
 }
 
 section {
@@ -38,7 +39,7 @@ section {
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .header .container {
@@ -66,7 +67,7 @@ section {
 
 .main-nav a {
     text-decoration: none;
-    color: var(--text-light);
+    color: var(--text-dark);
     font-weight: 400;
     transition: color 0.3s ease;
 }
@@ -77,7 +78,7 @@ section {
 
 /* Hero Section */
 .hero-section {
-    background-color: #2c3e50;
+    background-color: var(--background-light);
     text-align: center;
     padding: 120px 0;
 }
@@ -85,12 +86,14 @@ section {
 .hero-content h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    color: var(--primary-color);
 }
 
 .hero-content p {
     font-size: 1.1rem;
     max-width: 700px;
     margin: 0 auto 30px;
+    color: var(--text-dark);
 }
 
 .social-links {
@@ -98,7 +101,7 @@ section {
 }
 
 .social-links a {
-    color: var(--text-light);
+    color: var(--secondary-color); /* Social icons in secondary color */
     font-size: 1.5rem;
     margin: 0 15px;
     transition: color 0.3s ease;
@@ -110,35 +113,58 @@ section {
 
 /* Skills Section */
 .skills-section {
-    background-color: #34495e;
+    background-color: #e0e0eb; /* Light grey-purple background */
 }
 
 .skills-section h3, .projects-section h3, .contact-section h3 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 60px;
+    color: var(--secondary-color);
 }
 
 .skills-grid {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 30px; /* Reduced gap */
     flex-wrap: wrap;
 }
 
 .skill-category {
-    text-align: left;
-    background-color: #44607a;
+    text-align: center; /* Centered text for better presentation */
+    background-color: var(--card-bg);
     padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Softer, larger shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 280px; /* Fixed width for consistent boxes */
+    border: 1px solid rgba(var(--primary-color), 0.1); /* Subtle border */
+}
+
+.skill-category:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
 .skill-category h4 {
-    font-size: 1.5rem;
+    font-size: 1.6rem; /* Slightly larger title */
     color: var(--primary-color);
-    margin-bottom: 20px;
+    margin-bottom: 25px; /* Increased margin */
+    position: relative;
 }
+
+.skill-category h4::after {
+    content: '';
+    position: absolute;
+    bottom: -10px; /* Position under the title */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    border-radius: 2px;
+}
+
 
 .skill-category ul {
     list-style: none;
@@ -147,12 +173,20 @@ section {
 }
 
 .skill-category li {
-    padding: 8px 0;
+    padding: 10px 0; /* More padding */
+    font-size: 1.05rem; /* Slightly larger text */
+    color: var(--text-dark);
+    border-bottom: 1px dashed rgba(var(--secondary-color), 0.2); /* Dashed separator */
 }
+
+.skill-category li:last-child {
+    border-bottom: none; /* No border for the last item */
+}
+
 
 /* Projects Section */
 .projects-section {
-    background-color: #2c3e50;
+    background-color: var(--background-light);
 }
 
 .projects-grid {
@@ -164,14 +198,15 @@ section {
 .project-card {
     background-color: var(--card-bg);
     padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(var(--secondary-color), 0.1); /* Subtle border */
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
 .project-card h4 {
@@ -181,7 +216,7 @@ section {
 }
 
 .project-card p {
-    color: #bdc3c7;
+    color: #555555; /* Slightly darker text for project description */
     margin-bottom: 15px;
 }
 
@@ -195,10 +230,12 @@ section {
 }
 
 .tech-list li {
-    background-color: #4a6c8e;
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 0.8rem;
+    background-color: #d8c2e0; /* Lighter purple tag */
+    color: #4a0052; /* Darker text for tags */
+    padding: 6px 12px;
+    border-radius: 20px; /* Pill-shaped tags */
+    font-size: 0.85rem;
+    font-weight: 500;
 }
 
 .btn-link {
@@ -211,17 +248,19 @@ section {
 
 .btn-link:hover {
     transform: translateX(5px);
+    color: var(--secondary-color);
 }
 
 /* Contact Section */
 .contact-section {
     text-align: center;
-    background-color: #34495e;
+    background-color: #e0e0eb;
 }
 
 .contact-section p {
     max-width: 600px;
     margin: 0 auto 30px;
+    color: var(--text-dark);
 }
 
 .btn-primary {
@@ -232,18 +271,21 @@ section {
     border-radius: 50px;
     font-weight: 700;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(var(--primary-color), 0.3);
 }
 
 .btn-primary:hover {
-    background-color: #0056b3;
+    background-color: var(--secondary-color);
     transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(var(--secondary-color), 0.4);
 }
 
 /* Footer */
 .footer {
-    background-color: #2c3e50;
+    background-color: var(--card-bg);
     padding: 20px 0;
     text-align: center;
     font-size: 0.9rem;
-    border-top: 1px solid #44607a;
+    border-top: 1px solid #e0e0e0;
+    color: #666666; /* Darker grey for footer text */
 }
